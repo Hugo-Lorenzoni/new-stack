@@ -1,3 +1,4 @@
+import { ModeToggle } from "@/components/custom/mode-toggle";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -99,6 +100,7 @@ export default function Home() {
           Go to nextjs.org →
         </a>
         <Button>Button</Button>
+        <ModeToggle />
       </footer>
     </div>
   );
