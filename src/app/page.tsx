@@ -1,8 +1,10 @@
 import { ModeToggle } from "@/components/custom/mode-toggle";
 import { Button } from "@/components/ui/button";
+import s3Client from "@/lib/s3";
+import { tryCatch } from "@/lib/try-catch";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -26,6 +28,15 @@ export default function Home() {
             Save and see your changes instantly.
           </li>
         </ol>
+        <div className="flex items-center justify-center">
+          <img
+            src="http://localhost:3000/api/images?file=ntopng.png"
+            alt="Image from S3"
+            width={300}
+            height={300}
+            className="rounded-lg shadow-lg"
+          />
+        </div>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
