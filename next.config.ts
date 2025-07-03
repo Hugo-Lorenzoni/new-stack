@@ -2,10 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [new URL("http://localhost:3000/**")],
-    domains: ["localhost"],
+    remotePatterns: [new URL(`${process.env.NEXT_URL}/api/image/**`)],
+    domains: [process.env.NEXT_DOMAIN],
   },
-  allowedDevOrigins: ["http://localhost:3000"],
 };
 
 export default nextConfig;

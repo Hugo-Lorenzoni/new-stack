@@ -7,6 +7,10 @@ const EnvSchema = z.object({
   MINIO_ENDPOINT: z.string(),
   MINIO_PORT: z.string(),
   MINIO_USE_SSL: z.string(),
+  BETTER_AUTH_SECRET: z.string(),
+  BETTER_AUTH_URL: z.string().url(),
+  NEXT_URL: z.string().url(),
+  NEXT_DOMAIN: z.string(),
 });
 
 EnvSchema.parse(process.env);
